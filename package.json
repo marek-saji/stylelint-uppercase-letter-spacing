@@ -1,6 +1,6 @@
 {
   "name": "stylelint-uppercase-letter-spacing",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stylelint plugin to enforce defining letter-spacing with text-transform:uppercase.",
   "main": "index.js",
   "scripts": {
