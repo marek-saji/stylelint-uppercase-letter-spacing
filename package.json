@@ -1,0 +1,27 @@
+{
+  "name": "stylelint-uppercase-letter-spacing",
+  "version": "1.0.0",
+  "description": "Stylelint plugin to enforce defining letter-spacing with text-transform:uppercase.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marek-saji/stylelint-uppercase-letter-spacing.git"
+  },
+  "keywords": [
+    "stylelint",
+    "uppercase",
+    "letter-spacing"
+  ],
+  "author": "Marek ‘saji’ Augustynowicz <marek.aug@gmail.com> (https://twitter.com/saji_)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marek-saji/stylelint-uppercase-letter-spacing/issues"
+  },
+  "homepage": "https://github.com/marek-saji/stylelint-uppercase-letter-spacing#readme",
+  "devDependencies": {
+    "stylelint-test-rule-tape": "^0.2.0"
+  }
+}
