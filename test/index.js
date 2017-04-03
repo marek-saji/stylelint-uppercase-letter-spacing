@@ -7,17 +7,17 @@ testRule(uppercaseLetterSpacing.rule, {
     skipBasicChecks: false,
 
     accept: [
-        { code: '.foo {} ' },
-        { code: '.foo { text-transform: initial; } ' },
-        { code: '.foo { text-transform: uppercase; letter-spacing: 1em; }' },
-        { code: '.foo { letter-spacing: 0; text-transform: uppercase; }' },
+        { code: '.foo\n{} ' },
+        { code: '.foo\n{\ntext-transform: initial;\n}' },
+        { code: '.foo\n{\ntext-transform: uppercase;\nletter-spacing: 1em;\n}' },
+        { code: '.foo\n{\nletter-spacing: 0;\ntext-transform: uppercase;\n}' },
     ],
 
     reject: [
         {
-            code: '.foo { text-transform: uppercase; }',
+            code: '.foo\n{\ntext-transform: uppercase;\n}',
             message: uppercaseLetterSpacing.messages.expected,
-            line: 1,
+            line: 3,
         },
     ],
 });

@@ -8,7 +8,7 @@ var messages = stylelint.utils.ruleMessages(ruleName, {
 module.exports = stylelint.createPlugin(ruleName, function (primaryOption, secondaryOptionObject) {
   return function (postcssRoot, postcssResult) {
     postcssRoot.walkRules(function (rule) {
-        var isUppercased = false;
+        var uppercasedDecl;
         var hasLetterSpacing = false;
         rule.walkDecls(function (decl) {
             if (
@@ -16,20 +16,20 @@ module.exports = stylelint.createPlugin(ruleName, function (primaryOption, secon
                 'uppercase' === decl.value
             )
             {
-                isUppercased = true;
+                uppercasedDecl = decl;
             }
-            if ('letter-spacing' === decl.prop)
+            else if ('letter-spacing' === decl.prop)
             {
                 hasLetterSpacing = true;
             }
         });
 
-        if (isUppercased && ! hasLetterSpacing)
+        if (uppercasedDecl && ! hasLetterSpacing)
         {
             stylelint.utils.report({
                 ruleName: ruleName,
                 result: postcssResult,
-                node: rule,
+                node: uppercasedDecl,
                 message: messages.expected,
             });
         }
